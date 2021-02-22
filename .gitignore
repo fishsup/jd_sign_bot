@@ -16,3 +16,13 @@ package-lock.json
 
 JD_DailyBonus.js
 result.txt
+/.idea/codeStyles/
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/.idea/.gitignore
+/.idea/checkstyle-idea.xml
+/.idea/jd_sign_bot.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
