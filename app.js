@@ -9,8 +9,9 @@ const download = require('download');
 
 // 公共变量
 const KEY = process.env.JD_COOKIE;
-const serverJ = process.env.PUSH_KEY;
+const TgBotToken = process.env.TG_BOT_TOKEN;
 const DualKey = process.env.JD_COOKIE_2;
+const ChatId = process.env.CHAT_ID;
 
 
 async function downFile () {
@@ -28,11 +29,14 @@ async function changeFile () {
    await fs.writeFileSync( './JD_DailyBonus.js', content, 'utf8')
 }
 
-async function sendNotify (text,desp) {
+async function sendNotify (text) {
   const options ={
-    uri:  `https://sc.ftqq.com/${serverJ}.send`,
-    form: { text, desp },
-    json: true,
+    uri:  `https://api.telegram.org/bot${TgBotToken}/sendMessage`,
+    form: {
+        chat_id: ChatId,
+        text: text
+    },
+    /* headers: { 'content-type': 'application/x-www-form-urlencoded' // Is set automatically }*/
     method: 'POST'
   }
   await rp.post(options).then(res=>{
@@ -57,7 +61,7 @@ async function start() {
   await exec("node JD_DailyBonus.js >> result.txt");
   console.log('执行完毕')
 
-  if (serverJ) {
+  if (TgBotToken && ChatId) {
     const path = "./result.txt";
     let content = "";
     if (fs.existsSync(path)) {
@@ -67,9 +71,8 @@ async function start() {
     let res = t ? t[1].replace(/\n/,'') : '失败'
     let t2 = content.match(/【签到奖励】:((.|\n)*)【其他奖励】/)
     let res2 = t2 ? t2[1].replace(/\n/,'') : '总计0'
-
     
-    await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString(), content);
+    await sendNotify("" + ` ${res2} ` + ` ${res} ` + new Date().toLocaleDateString() + '\n' + ` ${content} `);
   }
 }
 
