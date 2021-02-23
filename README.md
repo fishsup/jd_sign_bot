@@ -28,7 +28,7 @@
 
 2. ##### 给自己的bot发送消息获取chatID
 
-   发送消息之后访问https://api.telegram.org/bot<YourBOTToken>/getUpdates获取消息
+   发送消息之后访问`https://api.telegram.org/bot<YourBOTToken>/getUpdates`获取消息
 
    ![image-20210223172402751](https://tva1.sinaimg.cn/large/008eGmZEly1gnxle3yezoj30pl0jgabv.jpg)
 
