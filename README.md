@@ -38,7 +38,7 @@
 
    机器人toke对应secret name为TG_BOT_TOKEN
 
-   chatId对应secret name为CHAT_ID![image-20210223172841765](/Users/cheney/Library/Application%20Support/typora-user-images/image-20210223172841765.png)
+   chatId对应secret name为CHAT_ID![image-20210223172841765](https://tva1.sinaimg.cn/large/008eGmZEly1gnxlu2kg3rj30oo062gm3.jpg)
 
 
 
