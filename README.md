@@ -9,7 +9,7 @@
 
 ### 在原项目基础上的改动
 
-- 微信模版消息替换为telegram机器人消息
+- Server酱微信模版消息替换为telegram机器人消息
 - 每12小时执行一次
 
 ### telegram bot消息接入
