@@ -7,6 +7,8 @@
 
 详情参考文章:[京东定时签到-GitHub 实现](https://ruicky.me/2020/06/05/jd-sign/) 
 
+京东Cookie获取:https://plogin.m.jd.com/login/login
+
 ### 在原项目基础上的改动
 
 - Server酱微信模版消息替换为telegram机器人消息
@@ -43,7 +45,4 @@
 
 
 当这些都配置好了, github workflow执行的时候就会收到机器人的消息了
-
-
-
 
